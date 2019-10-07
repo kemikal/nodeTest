@@ -1,0 +1,19 @@
+{
+  "name": "nodetest",
+  "version": "1.0.0",
+  "description": "super node app ",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/kemikal/nodeTest.git"
+      },
+      "author": "",
+      "license": "ISC",
+      "bugs": {
+        "url": "https://github.com/kemikal/nodeTest/issues"
+        },
+        "homepage": "https://github.com/kemikal/nodeTest#readme"
+}
