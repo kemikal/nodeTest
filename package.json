@@ -5,15 +5,20 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
-    },
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/kemikal/nodeTest.git"
-      },
-      "author": "",
-      "license": "ISC",
-      "bugs": {
-        "url": "https://github.com/kemikal/nodeTest/issues"
-        },
-        "homepage": "https://github.com/kemikal/nodeTest#readme"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kemikal/nodeTest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kemikal/nodeTest/issues"
+  },
+  "homepage": "https://github.com/kemikal/nodeTest#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemod": "^1.5.19",
+    "nodemon": "^1.19.3"
+  }
 }

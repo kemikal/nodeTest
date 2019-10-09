@@ -1,11 +1,38 @@
-const http = require('http');
+const express = require('express');
 
-const port=process.env.PORT || 3000
-const server = http.createServer((req, res) => {
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/html');
-    res.end('<h1>Hello World</h1>');
+const app = express();
+const port=process.env.PORT || 3000;
+const fs = require('fs');
+
+app.use(express.static('static'));
+
+app.get('/', (req, res) => res.send('Hello World!'));
+app.get('/info', (req, res) => res.send('Info page'));
+
+app.get("/countrys", (req, res, next) => {
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+        
+            fs.readFile('countrys.json', (err, json) => {
+                    let obj = JSON.parse(json);
+                    res.json(obj);
+                    //res.json();
+            });
+   });
+
+   app.get("/citys", (req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    
+        fs.readFile('citys.json', (err, json) => {
+                let obj = JSON.parse(json);
+                res.json(obj);
+                //res.json();
+        });
 });
-server.listen(port,() => {
-    console.log(`Server running at port `+port);
-});
+
+app.get('*', function(req, res){
+    res.sendFile('static/404.html', { root: __dirname });
+  }); 
+
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));
