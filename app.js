@@ -144,7 +144,7 @@ app.post('/addCountry', urlencodedParser, function (req, res){
 
         const newCountry = {
             id: countrys.length +1,
-            name: req.body.name
+            countryname: req.body.name
         }
 
         countrys.push(newCountry);
